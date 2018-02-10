@@ -1,0 +1,80 @@
+\hypertarget{classgroup10_1_1_draw_view}{}\section{group10.\+Draw\+View Class Reference}
+\label{classgroup10_1_1_draw_view}\index{group10.\+Draw\+View@{group10.\+Draw\+View}}
+Inheritance diagram for group10.\+Draw\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgroup10_1_1_draw_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a9081a28056594f2f175ae6749eff235c}\label{classgroup10_1_1_draw_view_a9081a28056594f2f175ae6749eff235c}} 
+{\bfseries Draw\+View} (Context context)
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a98e0305fd48cb1c8fb78de1b49c95700}\label{classgroup10_1_1_draw_view_a98e0305fd48cb1c8fb78de1b49c95700}} 
+boolean {\bfseries on\+Touch\+Event} (Motion\+Event event)
+\item 
+void \hyperlink{classgroup10_1_1_draw_view_ab3d28bc92fb34fadb2878328f25d322e}{clear\+Canvas} ()
+\item 
+double \hyperlink{classgroup10_1_1_draw_view_a545ae5eccd5abcfeb8d2c7286ca6c0e7}{calculate} (double reference, int input\+Unit\+Index, int output\+Unit\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a14097100501238112b1bf25785bfd5b5}\label{classgroup10_1_1_draw_view_a14097100501238112b1bf25785bfd5b5}} 
+void {\bfseries on\+Draw} (Canvas canvas)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a931ab94ed7afbb4a27797ac28886d87e}\label{classgroup10_1_1_draw_view_a931ab94ed7afbb4a27797ac28886d87e}} 
+Paint {\bfseries paint} = new Paint(Paint.\+A\+N\+T\+I\+\_\+\+A\+L\+I\+A\+S\+\_\+\+F\+L\+AG)
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a55e7d46e3243db688169ac91ff52a1e0}\label{classgroup10_1_1_draw_view_a55e7d46e3243db688169ac91ff52a1e0}} 
+Context {\bfseries context}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a4bca35b2dbdd6e5522a661c8ac4533b0}\label{classgroup10_1_1_draw_view_a4bca35b2dbdd6e5522a661c8ac4533b0}} 
+static int {\bfseries R\+E\+F\+E\+R\+E\+N\+C\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+C\+O\+L\+OR} = Color.\+Y\+E\+L\+L\+OW
+\item 
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a2e1893b4a1f608e891cf9b5b9d1a853b}\label{classgroup10_1_1_draw_view_a2e1893b4a1f608e891cf9b5b9d1a853b}} 
+static int {\bfseries M\+E\+A\+S\+U\+R\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+C\+O\+L\+OR} = Color.\+R\+ED
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to draw the points on screen. Handles user touch input. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_a545ae5eccd5abcfeb8d2c7286ca6c0e7}\label{classgroup10_1_1_draw_view_a545ae5eccd5abcfeb8d2c7286ca6c0e7}} 
+\index{group10\+::\+Draw\+View@{group10\+::\+Draw\+View}!calculate@{calculate}}
+\index{calculate@{calculate}!group10\+::\+Draw\+View@{group10\+::\+Draw\+View}}
+\subsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily double group10.\+Draw\+View.\+calculate (\begin{DoxyParamCaption}\item[{double}]{reference,  }\item[{int}]{input\+Unit\+Index,  }\item[{int}]{output\+Unit\+Index }\end{DoxyParamCaption})}
+
+Calculates the measurement 
+\begin{DoxyParams}{Parameters}
+{\em reference} & The reference size \\
+\hline
+{\em input\+Unit\+Index} & The input length unit index \\
+\hline
+{\em output\+Unit\+Index} & The output length unit index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the measurement, converted to output\+Unit\+Index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgroup10_1_1_draw_view_ab3d28bc92fb34fadb2878328f25d322e}\label{classgroup10_1_1_draw_view_ab3d28bc92fb34fadb2878328f25d322e}} 
+\index{group10\+::\+Draw\+View@{group10\+::\+Draw\+View}!clear\+Canvas@{clear\+Canvas}}
+\index{clear\+Canvas@{clear\+Canvas}!group10\+::\+Draw\+View@{group10\+::\+Draw\+View}}
+\subsubsection{\texorpdfstring{clear\+Canvas()}{clearCanvas()}}
+{\footnotesize\ttfamily void group10.\+Draw\+View.\+clear\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all drawn points and shapes 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/princ/\+Desktop/eng 3/3xa3/source/Draw\+View.\+java\end{DoxyCompactItemize}

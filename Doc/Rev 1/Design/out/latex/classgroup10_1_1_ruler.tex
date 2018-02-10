@@ -1,0 +1,99 @@
+\hypertarget{classgroup10_1_1_ruler}{}\section{group10.\+Ruler Class Reference}
+\label{classgroup10_1_1_ruler}\index{group10.\+Ruler@{group10.\+Ruler}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{classgroup10_1_1_ruler_a80bd8e8dfeeb8e4160486ad01d6ca03e}{compute} (List$<$ Point $>$ points, double scale, int input\+Unit\+Index, int output\+Unit\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{classgroup10_1_1_ruler_a9dec5abc444282d874dc441fe66daa40}{get\+Distance} (Point p1, Point p2)
+\item 
+static double \hyperlink{classgroup10_1_1_ruler_a3447089ea321fa737049b10daaecfa0e}{convert\+Units} (int ref\+Unit, double reference, int mea\+Unit, double measurement)
+\item 
+static double \hyperlink{classgroup10_1_1_ruler_a23c8d18380fb06f65ee8722a355baebf}{to\+Meters} (double measurement, int ref\+Unit)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that handles all the mathematical operations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classgroup10_1_1_ruler_a80bd8e8dfeeb8e4160486ad01d6ca03e}\label{classgroup10_1_1_ruler_a80bd8e8dfeeb8e4160486ad01d6ca03e}} 
+\index{group10\+::\+Ruler@{group10\+::\+Ruler}!compute@{compute}}
+\index{compute@{compute}!group10\+::\+Ruler@{group10\+::\+Ruler}}
+\subsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily static double group10.\+Ruler.\+compute (\begin{DoxyParamCaption}\item[{List$<$ Point $>$}]{points,  }\item[{double}]{scale,  }\item[{int}]{input\+Unit\+Index,  }\item[{int}]{output\+Unit\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Based on a list of 4 points, computes the distance between the last 2 using the first 2 as a reference. 
+\begin{DoxyParams}{Parameters}
+{\em points} & A List of 4 points \\
+\hline
+{\em scale} & The value of the distance between the first 2 points \\
+\hline
+{\em input\+Unit\+Index} & Input unit \\
+\hline
+{\em output\+Unit\+Index} & Output unit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the distance between the last 2 points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgroup10_1_1_ruler_a3447089ea321fa737049b10daaecfa0e}\label{classgroup10_1_1_ruler_a3447089ea321fa737049b10daaecfa0e}} 
+\index{group10\+::\+Ruler@{group10\+::\+Ruler}!convert\+Units@{convert\+Units}}
+\index{convert\+Units@{convert\+Units}!group10\+::\+Ruler@{group10\+::\+Ruler}}
+\subsubsection{\texorpdfstring{convert\+Units()}{convertUnits()}}
+{\footnotesize\ttfamily static double group10.\+Ruler.\+convert\+Units (\begin{DoxyParamCaption}\item[{int}]{ref\+Unit,  }\item[{double}]{reference,  }\item[{int}]{mea\+Unit,  }\item[{double}]{measurement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Converts between units of length. 
+\begin{DoxyParams}{Parameters}
+{\em ref\+Unit} & The unit of the reference size \\
+\hline
+{\em reference} & The reference size \\
+\hline
+{\em mea\+Unit} & The unit of the measurement size \\
+\hline
+{\em measurement} & The measurement size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+measurement converted to ref\+Unit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgroup10_1_1_ruler_a9dec5abc444282d874dc441fe66daa40}\label{classgroup10_1_1_ruler_a9dec5abc444282d874dc441fe66daa40}} 
+\index{group10\+::\+Ruler@{group10\+::\+Ruler}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!group10\+::\+Ruler@{group10\+::\+Ruler}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}}
+{\footnotesize\ttfamily static double group10.\+Ruler.\+get\+Distance (\begin{DoxyParamCaption}\item[{Point}]{p1,  }\item[{Point}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Get the distance between 2 points 
+\begin{DoxyParams}{Parameters}
+{\em p1} & First point \\
+\hline
+{\em p2} & Second point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance between the 2 points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgroup10_1_1_ruler_a23c8d18380fb06f65ee8722a355baebf}\label{classgroup10_1_1_ruler_a23c8d18380fb06f65ee8722a355baebf}} 
+\index{group10\+::\+Ruler@{group10\+::\+Ruler}!to\+Meters@{to\+Meters}}
+\index{to\+Meters@{to\+Meters}!group10\+::\+Ruler@{group10\+::\+Ruler}}
+\subsubsection{\texorpdfstring{to\+Meters()}{toMeters()}}
+{\footnotesize\ttfamily static double group10.\+Ruler.\+to\+Meters (\begin{DoxyParamCaption}\item[{double}]{measurement,  }\item[{int}]{ref\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Converts a value in a given unit to meters. 
+\begin{DoxyParams}{Parameters}
+{\em measurement} & The length value. \\
+\hline
+{\em ref\+Unit} & The original unit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length value in meters 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/princ/\+Desktop/eng 3/3xa3/source/Ruler.\+java\end{DoxyCompactItemize}

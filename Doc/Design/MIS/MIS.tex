@@ -1,0 +1,329 @@
+\documentclass[12,english]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage{multirow}
+
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+      colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\title{Module Interface Specfication for Group 10 - CamRuler}
+\author{Prince Kowser\\
+\texttt{ (kowserm)}
+\and
+Meet Patel\\
+\texttt{(patelm)}
+\and
+Kshitij Mehta\\
+\texttt{(mehtak1)}
+}
+
+\date{}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Module Hierarchy}
+\begin{table}[!htbp]
+        \begin{tabular}{ll}
+        \toprule
+        Level 1 & Level 2 \\
+        \midrule
+        Hardware Hiding Module & \\
+         \midrule
+        Behaviour Hiding Module & DrawView Module \\
+        & ImageSurface Module\\
+        & InputDialog Module\\
+        & Ruler Module\\ 
+		& Utils Module \\
+		 \midrule
+        Software Decision Module & Main Activity Module\\
+        
+        \bottomrule
+        \end{tabular}
+        \caption{Module Hierarchy}
+        % Colour for the rulings in tables:
+        \makeatletter
+           \def\rulecolor#1#{\CT@arc{#1}}
+           \def\CT@arc#1#2{%
+           \ifdim\baselineskip=\z@\noalign\fi
+           {\gdef\CT@arc@{\color#1{#2}}}}
+           \let\CT@arc@\relax
+          \rulecolor{black!50}
+        \makeatother
+        \label{Table 1}
+        \end{table}
+
+\section{MIS of DrawView Module}
+		\subsection{Interface Syntax}
+		\subsubsection{Exported Access Programs}
+		\begin{tabular}[pos]{|c|c|c|c|}
+			
+			\hline
+			%	\label
+			\textbf{Name}& \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\ \hline
+			DrawView & context & -  & -\\ \hline
+			onDraw & canvas & -  & -\\ \hline
+			onTouchEvent & event & -  & -\\ \hline
+			clearCanvas & clearCanvas & -  & -\\ \hline
+			Calculate & double, int, int & double  & -\\ \hline
+		\end{tabular}
+		
+		\subsection{Interface Semantics}
+		\subsubsection{State Variables}
+		paint: paint - holds drawin line information
+		circlePoints: List<Point> - stores user's drawn points 
+		Context: context - Holds the context of current state of the object
+		Referencepointcolor: Color - holds color information
+		Measurepointcolor: Color - holds color information
+		
+		\subsubsection{Environmental Variables}
+		Not Applicable
+		
+		\subsubsection{Assumptions}
+		Variables should be set before trying to access them
+		
+		\subsubsection{Access Program Semantics}
+		DrawView(context):
+		
+		Input: context
+		
+		Transition: Prepares the context of the object to be drawn on
+		
+		Output: None\\
+		Exceptions: None\\
+		\\
+		onDraw(Canvas):
+		
+		Input: Canvas the object to draw on
+		
+		Transition: Draws the line between two points after user inputs the reference points
+		
+		Output: none
+		
+		Exception: none\\ 
+		\\
+		onTouchEvent(event):
+		
+		Input: event
+		
+		Transition: Restricts the user to draw only 4 points and manages the transition between each point drawn
+		
+		Output: none
+		
+		Exception: none\\ 
+		\\
+		clearCanvas():
+		
+		Input: 
+		
+		Transition: Clears the canvas of all points drawn
+		
+		Output: none
+		
+		Exception: none\\ 
+		\\
+		Calculate():
+		
+		Input: double length of reference object, int input unit index, int output unit index 
+		
+		Transition: Calculates the measurement
+		
+		Output: the measuremnt of the drawn object
+		
+		Exception: none\\ 
+		\\
+	
+	
+	
+\section{MIS of ImageView}
+		\subsection{Interface Syntax}
+		\subsubsection{Exported Access Programs}
+		\begin{tabular}[pos]{|c|c|c|c|}
+			
+			\hline
+			%	\label
+			\textbf{Name}& \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\ \hline
+			ImageSurface & context, image & - & -\\ \hline
+			onDraw & canvas & - & -\\ \hline
+			Surfacecreated & holder &  & -\\ \hline
+
+			
+		\end{tabular}
+		
+		\subsection{Interface Semantics}
+		\subsubsection{State Variables}
+	    icon: Bitmap - used to store point drawing info
+		paint: Paint - ink info\\
+
+		\subsubsection{Environmental Variables}
+		
+		\subsubsection{Assumptions}
+		Variables should be set before trying to access them
+		
+		\subsubsection{Access Program Semantics}
+		
+		ImageSurface(context, image):
+		
+		Input: context, image
+		
+		Transition: Craetes a surface to draw on the image
+		
+		Output: none
+		Exceptions: None\\
+		\\
+		onDraw(canvas):
+		
+		Input: canvas - the object to draw on
+		
+		Transition: draws the two points 
+		
+		Output: none
+		
+		Exception: none\\ 
+		\\
+		surfacecreated(holder):
+		
+		Input: holder - holds the surface information 
+		
+		Transition: unlocks the drawing surface when user input is needed or else keep it locked
+		
+		Output: none
+		
+		Exception: none\\ 
+		
+	
+	
+	
+\section{MIS of InputDialog}
+	\subsection{Interface Syntax}
+		\subsubsection{Exported Access Programs}
+		\begin{table}[!htbp]
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			onCreateDialog & Bundle & Dialog & - \\ \hline
+		\end{tabular}
+	\end{table}
+		
+	\subsection{Interface Semantics}
+		\subsubsection{State Variables}
+		
+		\subsubsection{Environmental Variables}
+		
+		\subsubsection{Assumptions}
+			
+		\subsubsection{Access Program Semantics}
+
+onCreateDialog(savedInstanceState):
+
+		Input: no inputs
+		
+		Transition: Creates a pop up dialog on screen
+		
+		Output: the dialog
+		
+		Exception - None\\
+		
+
+
+
+\section{MIS of Calculation}
+	\subsection{Interface Syntax}
+		\subsubsection{Exported Access Programs}
+		
+	\begin{tabular}[pos]{|c|c|c|c|}
+	\hline
+	\textbf{Name}& \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\ 
+	\hline
+	compute & List<point>, double, Int, Int & double & -\\ 
+	\hline
+	getDistance & Point,Point & double & -\\ 
+	\hline
+	convertUnits & int,double,int,double & double & -\\ 
+	\hline
+	toMeters & double,int & double & -\\ 
+	\hline
+		
+	\end{tabular}		
+		
+	\subsection{Interface Semantics}
+		\subsubsection{State Variables}
+		Not Applicable
+		\subsubsection{Environmental Variables}
+	
+		\subsubsection{Assumptions}
+
+		\subsubsection{Access Program Semantics}
+		compute(points, scale, inputindex, outputindex):
+		
+		Input: List<Point> points, double scale, int inputUnitIndex, int outputUnitIndex
+		
+		Transition: Calculates the actual measurement in according to reference object 
+		
+		Output: the measurement 
+		
+		Exception: \\
+		\\
+		getDistance(point,point):
+		
+		Input: two Point objects, p1 and p2
+		
+		Transition: calculate distance between each point
+		
+		Output: the distance
+		
+		Exception:
+		\\
+		conveertunits(refunit,reference,meaunit,measurement):
+
+		Input: reference input numbere, reference measurement, measuremnt output unit, masurement of oject
+		
+		Transition: do the conversion math
+		
+		Out: the converted measurement
+		
+		Exception: 
+		\\
+	
+		toMeters(measurement, refunit):
+		
+		Input: measurement and reference unit indicater 
+		
+		Transition: convert to meters
+		
+		Output: converted measurment
+		
+		Exception: none\\
+		\\
+		
+\section{Major Revision History}
+
+November 10, 2017 - Revision 0 roughdraft
+
+			
+\end{document}
